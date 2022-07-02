@@ -10,7 +10,7 @@ const [signInModal , setSignInModal]=useState(props.signin);
 
 const handleModals =(e)=>{
 
-    if (e.target.id == 'register'){
+    if (e.target.id === 'register'){
 
         setSignInModal(false)
         setSignUpModal(true)
