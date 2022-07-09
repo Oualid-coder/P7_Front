@@ -37,7 +37,7 @@ if(uid){
 }
 
 
-  },[uid])
+  },[uid,dispatch])
 
   return (
    <UidContext.Provider value={uid}>
