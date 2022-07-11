@@ -87,11 +87,11 @@ useEffect(()=>{
     <img src={post.picture} alt="card-pic" />
 )}
 
-{userData._id===post.posterId && (
+{(userData._id===post.posterId || userData.isAdmin===true)  && (
     <div  className='button-container'>
         <div onClick={()=>setIsUpdated(!isUpdated)} >edit</div>
 
-        <Delete id={post._id}/>
+       <Delete id={post._id}/>
     </div>
 )}
 <div className='card-footer'>
