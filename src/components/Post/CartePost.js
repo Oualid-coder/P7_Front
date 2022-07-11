@@ -4,6 +4,7 @@ import {dateParser, isEmpty} from "../utils";
 import { updatePost } from '../../actions/post.action';
 
 import Delete from './Delete';
+import Like from './Like';
 // import { post } from '../../../../routes/user.routes';
 
 const CardPost =({ post })=>{
@@ -93,6 +94,15 @@ useEffect(()=>{
         <Delete id={post._id}/>
     </div>
 )}
+<div className='card-footer'>
+    <div className='comment-icon' >
+
+
+    </div>
+    <div>commentaire</div>
+    <Like  post={post}/>
+
+</div>
 
 
 </div>
