@@ -39,12 +39,20 @@ export const addPost=(data)=>{
 
     return (dispatch)=>{
 
-        return axios 
-        .post(`${process.env.REACT_APP_API_URL}api/post/`, data)
-        .then((res) => {
-         
+        return axios ({
+                method:"post",
+                url:`${process.env.REACT_APP_API_URL}api/post/` ,
+                data:data,
+                headers: {
+                    'Content-Type': 'multipart/form-data;boundary=----WebKitFormBoundaryyrV7KO0BoCBuDbTL'
+                  }
+                  
+
+
+        }).then((res)=>{
             console.log(res.data)
-          }).catch((err)=>console.log(err))
+        }).catch((err)=>console.log(err))
+     
 
     }
 }
@@ -104,7 +112,7 @@ export const updatePost=(postId,message)=>{
             url:`${process.env.REACT_APP_API_URL}api/post/${postId}`,
             data:{ message }
         }).then((res)=>{
-            dispatch({type:UPDATE_POST, payload:{ message,postId }})
+            dispatch({type:UPDATE_POST, payload:{ message , postId }})
         })
         .catch((err)=>console.log(err))
     }

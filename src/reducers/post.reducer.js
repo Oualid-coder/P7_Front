@@ -38,10 +38,10 @@ case LIKE_POST:
 
     case UPDATE_POST:    
           return state.map((post)=>{
-              if(post._id===action.payload){
+              if(post._id===action.payload.postId){
                   return {
                     ...post,
-                    message:action.payload.message
+                    message: action.payload.message
                   }
                       
               }else return post

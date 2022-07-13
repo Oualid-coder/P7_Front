@@ -18,12 +18,12 @@ const [showComments,setShowCommments]=useState(false);
 
 const dispatch = useDispatch()
 
-const updateItem= ()=>{
+const updateItem=  ()=>{
 if(textUpdate){
     dispatch(updatePost(post._id,textUpdate))
 }
 //on remet sur false une fois l'edition effectué
-setIsUpdated(false)
+setIsUpdated(false);
 
 }
 

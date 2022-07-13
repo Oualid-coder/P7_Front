@@ -16,16 +16,17 @@ const dispatch=useDispatch()
 
 
 
-const handlePost=async()=>{
+const handlePost=async(e)=>{
+    e.preventDefault();
 if(message || postPicture){
 
     const data = new FormData();
 data.append('posterId',userData._id);
 data.append('message',message);
-if(file){ data.append("file",file)}
+if(file) data.append("file",file)
 
 //on dispatch la data et on demande a la BDD  de la renvoyer car on ne connait pas les id des post généré par mongo pour l'edition
-await dispatch(addPost(data))
+ await dispatch(addPost(data))
 dispatch(getPosts())
 // on remet tout à 0
 cancelPost();
@@ -36,7 +37,8 @@ cancelPost();
 };
 
 const handlePicture=(e)=>{
-    setPostPicture(URL.createObjectURL(e.target.files[0]))
+    //pour previsualisation
+    setPostPicture(URL.createObjectURL(e.target.files[0]));
     setFile(e.target.files[0])
     }
 
@@ -67,7 +69,24 @@ useEffect(()=>{
 </NavLink>
 <div className='post-form' >
     <textarea  name='message' id="message" placeholder='écrire votre post' onChange={(e)=>setMessage(e.target.value)} value={message} />
-
+{message || postPicture ?(
+    <li className='card-container'>
+        <div className='card-left'>
+            <img src={userData.picture} alt="pic" />
+        </div>
+        <div className='card-right' >
+            <div className='card-header' >
+                <div className='pseudo' >
+                    <h3>{userData.pseudo}</h3>
+                </div>
+            </div>
+            <div className='content' >
+                <p>{message}</p>
+                <img src={postPicture} alt=""  />
+            </div>
+        </div>
+    </li>
+):null}
 <div className='footer-form'>
     <div className='icon'>
         <>
