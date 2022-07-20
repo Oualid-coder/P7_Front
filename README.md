@@ -6,6 +6,9 @@ Démarrer le server : cd backend + npm start
 
 Démarrer le front : cd groupomaniaFront + npm start
 
+_________________________________________
+
+
 Back config :
 
 
@@ -16,6 +19,7 @@ CLIENT_URL=http://localhost:3001 votre URL client
 DB_USER_PASS=****** votre identifiant et mot de passe
 TOKEN_SECRET= votre clé secrète aléatoire
 
+___________________________________________
 
 Front config :
 
