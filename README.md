@@ -1,6 +1,6 @@
 
 
-à la racine du dossier backend, groupomaniaFront entrée la commande npm i pour installer les dépendances
+à la racine du dossier  groupomaniaFront entrée la commande npm i pour installer les dépendances
 
 Démarrer le server : cd backend + npm start
 
