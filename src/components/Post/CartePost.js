@@ -13,7 +13,7 @@ const usersData= useSelector((state)=> state.usersReducer);
 const userData= useSelector((state)=> state.userReducer);
 const [isUpdated,setIsUpdated]=useState(false);
 const [textUpdate, setTextUpdate]=useState(null);
-const [showComments,setShowCommments]=useState(false);
+
 
 
 const dispatch = useDispatch()
@@ -84,7 +84,7 @@ useEffect(()=>{
     </div>
 )}
 {post.picture && (
-    <img src={post.picture} alt="card-pic" />
+    <img src={post.picture} alt="card-pic" className='card-pic' />
 )}
 
 {(userData._id===post.posterId || userData.isAdmin===true)  && (
@@ -99,7 +99,7 @@ useEffect(()=>{
 
 
     </div>
-    <div>commentaire</div>
+   
     <Like  post={post}/>
 
 </div>

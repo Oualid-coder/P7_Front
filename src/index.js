@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import './styles/index.scss'
 
 import { Provider } from 'react-redux'
-import { applyMiddleware, createStore } from 'redux'
+import { legacy_createStore as createStore } from 'redux'
+import { applyMiddleware } from 'redux'
 
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
